@@ -99,6 +99,6 @@ Another huge benefit of passing an argument by reference is a faster runtime of 
 ### Conclusions
 In this post I gave a brief introduction on how to create a reference, change the value of a refered variable and use references in functions. To make sure you learned something I provided three small playgrounds, where you can check your understanding of references:
 - [reference train](https://wandbox.org/permlink/2LQD473YlZ9wOZV6)
--[swap function](https://wandbox.org/permlink/LXUFfBcvXyj06DNW)
+- [swap function](https://wandbox.org/permlink/LXUFfBcvXyj06DNW)
 
 In a next post we will take a closer look at pointers.
