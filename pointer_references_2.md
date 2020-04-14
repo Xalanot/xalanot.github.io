@@ -35,3 +35,6 @@ Since pointer store a memory adress as their value we can simply change the loca
 int a = 1;
 int b = 2;
 int* ptr = &a;
+
+std::cout << "value of ptr before swap: " << *ptr << std::endl;
+std::cout << "value at the dereferenced ptr
