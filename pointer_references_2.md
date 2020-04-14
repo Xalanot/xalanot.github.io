@@ -27,3 +27,11 @@ std::cout << "value at the memory adress b is pointing to: " << *b << std::endl;
 ```
 
 A full version of this code snippet can be found [here](https://wandbox.org/permlink/nQXEysCOwSiFDSMk)
+
+### Changing the pointer
+Since pointer store a memory adress as their value we can simply change the location a pointer is pointing so. For example we have a pointer first pointing to the adress of a variable <strong>a</strong> and than want to point to variable <strong>b</strong>, we only need to set the new memory adress:
+
+```cpp
+int a = 1;
+int b = 2;
+int* ptr = &a;
