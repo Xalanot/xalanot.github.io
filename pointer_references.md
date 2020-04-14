@@ -7,7 +7,7 @@
 - How to create a pointer to a new variable
 
 ### Introduction
-One of the most confusing things about starting with C++ are pointers and references. In this blog post I will give a deep dive into it and try to explain the topic with alots of examples. Even this post is for the beginner, you can learn a lot from it. To get startet we need to think about how variables are stored in memory and how we can access them. Lets say we want to create an integer with the value 5. To be able to easily access this integer we assign a variable with the name <strong>a</strong> to it.
+One of the most confusing things about starting with C++ are pointers and references. In this blog post I will give a deep dive into it and try to explain the topic with alots of examples. Even this post is for the beginner, you can learn a lot from it. To get started we need to think about how variables are stored in memory and how we can access them. Lets say we want to create an integer with the value 5. To be able to easily access this integer we assign a variable with the name <strong>a</strong> to it.
 
 ```cpp
 int a = 5;
