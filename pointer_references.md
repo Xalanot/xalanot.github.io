@@ -18,5 +18,35 @@ Now we can simply use this variable by its name, but how does our program know, 
  std::cout << "memory adress: " << &a << endl;
  ```
  
- ### References
+### References
+So now we can acess the memory adress, but what can we do with it? A first intuition would be to use this memory adress to assign another variable, lets call it <strong>b</strong>, to it. We call a variable which is constructed from a memory adress a reference. The syntax for this type is a trailing <strong>&</strong>. But what are the differences to assigning another variable <strong>c</strong> to the variable <strong>a</strong>?
  
+ ```
+ int a = 5;
+ int& b = a;
+ int c = a;
+ ```
+If we print the values, we will see no differences:
+
+```
+std::cout << "value of a: " << a << std::endl;
+std::cout << "value of b: " << b << std::endl;
+std::cout << "value of c: " << c << std::endl;
+```
+
+But if we print out the memory adress, we see what we expect:
+
+```
+std::cout << "memory adress of a: " << &a << std::endl;
+std::cout << "memory adress of b: " << &b << std::endl;
+std::cout << "memory adress of c: " << &c << std::endl;
+```
+
+The adresses of <strong>a</strong> and <strong>b</strong> are the same but <strong>c</strong> is different. So what does this really mean? The variable <strong>b</strong> is referencing to the variable <strong>a</strong>. Therefore no new integer has to be created, sice <strong>b</strong> is only refering to the integer at <strong>ma_0</strong>. But for variable <strong>c</strong> a integer has to be created based on the value of <strong>a</strong> at another memory adress <strong>ma_1</strong>. If we now going to change the value of <strong>a</strong>, we are actually changing the value at <strong>ma_0</strong> and therefore the value of <strong>b</strong> is also changed. For the variable <strong>c</strong> nothing changes since the value of it is at <strong>ma_1</strong>:
+
+```
+a = 10;
+std::cout << "value of a: " << a << std::endl;
+std::cout << "value of b: " << b << std::endl;
+std::cout << "value of c: " << c << std::endl;
+```
