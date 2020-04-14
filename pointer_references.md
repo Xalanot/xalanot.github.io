@@ -43,7 +43,7 @@ std::cout << "memory adress of b: " << &b << std::endl;
 std::cout << "memory adress of c: " << &c << std::endl;
 ```
 
-The adresses of <strong>a</strong> and <strong>b</strong> are the same but <strong>c</strong> is different. So what does this really mean? The variable <strong>b</strong> is referencing to the variable <strong>a</strong>. Therefore no new integer has to be created, since <strong>b</strong> is only refering to the integer at <strong>ma_0</strong>. But for variable <strong>c</strong> a integer has to be created based on the value of <strong>a</strong> at another memory adress <strong>ma_1</strong>. If we are now going to change the value of <strong>a</strong>, we are actually changing the value at <strong>ma_0</strong> and therefore the value of <strong>b</strong> is also changed. For the variable <strong>c</strong> nothing changes since the value of it is at <strong>ma_1</strong>:
+The adresses of <strong>a</strong> and <strong>b</strong> are the same but <strong>c</strong> is different. So what does this really mean? The variable <strong>b</strong> is referencing to the variable <strong>a</strong>. Therefore no new integer has to be created, since <strong>b</strong> is only refering to the integer at <strong>ma_0</strong>. But for variable <strong>c</strong> a integer has to be created (copied) based on the value of <strong>a</strong> at another memory adress <strong>ma_1</strong>. If we are now going to change the value of <strong>a</strong>, we are actually changing the value at <strong>ma_0</strong> and therefore the value of <strong>b</strong> is also changed. For the variable <strong>c</strong> nothing changes since the value of it is at <strong>ma_1</strong>:
 
 ```cpp
 a = 10;
@@ -94,3 +94,11 @@ int main()
 ```
 
 Again I added [some code](https://wandbox.org/permlink/2H2zNkvjqC50MRAK) with some debug informations. This time the function has a reference to the variable <strong>a</strong> from the main scope, so the increment takes place directly at the memory adress of <strong>a</strong>. Consequently the value from <strong>a</strong> changed as expected.
+Another huge benefit of passing an argument by reference is a faster runtime of your program. To understand why we need to remember what happens when we pass a variable by value. Since the function only knows the value of the variable, it needs to save the value somewhere and creates a new object with the passed value. So we have to pay the price of the initialization. If we consider an object which is very expensive to create (for simplicity we say it takes 10 seconds on every computer) and we want to use this object inside a function, we don't want to copy the same object every time. If we pass the object by reference, we only tell the compiler at which memory adress our object lives. This is the same cost for every object wheter it has a big or small initialization time. I provided a little example [here](https://wandbox.org/permlink/Kes4YvFOr6YYv2ti). Don't worry to much about the BigObject object. It is simple dummy object, which does nothing than waiting for 10 seconds whenever it gets initialized or copied. Also make sure to re-run the code to observe the differences.
+
+### Conclusions
+In this post I gave a brief introduction on how to create a reference, change the value of a refered variable and use references in functions. To make sure you learned something I provided three small playgrounds, where you can check your understanding of references:
+- [reference train](https://wandbox.org/permlink/2LQD473YlZ9wOZV6)
+-[swap function](https://wandbox.org/permlink/LXUFfBcvXyj06DNW)
+
+In a next post we will take a closer look at pointers.
