@@ -102,5 +102,5 @@ Most of the time the value is simply 0 but we have no real knowledge about it.
 In this part I introduec the basic idea of pointers and how you can use them. As a next step check out the post about dynamic allocation and how you use pointer for that. Again I provided some small playgrounds for you.
 
 - [Pointer train](https://wandbox.org/permlink/3eGnQ3tWnfGSnNsG)
-- [Array to pointer](https://wandbox.org/permlink/ZBaHx10sG9RDBUEE)
+- [Array to pointer](https://wandbox.org/permlink/4tVSDd1J6DUY7kHl)
 - [Reverese an array](https://wandbox.org/permlink/YwScLLZ34K6mldbW)
