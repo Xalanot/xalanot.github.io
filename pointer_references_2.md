@@ -81,7 +81,7 @@ int arr[] = {10, 20, 30};
 std::cout << "array at index 1 with the [] operator: " << arr[1] << std::endl;
 std::cout << "array at index 1 with the * operator: " << *(arr + 1) << std::endl;
 ```
-As you can see [here](https://wandbox.org/permlink/5bYBo4sB01sBVWDi) both methods will print out the same. The reason for this is that <strong>arr</strong> is implicitly converted to a pointer. Also the <strong>+ operator</strong> for pointers are overloaded, so we can jump to the next adress by simpy adding 1 to the pointer and the programm will intern lookup the size of the stored objects and add it to the memory adress. For simplicity instead of writing <strong>\*(arr + 1)<strong> you can use the <strong>[]</strong> operator.
+As you can see [here](https://wandbox.org/permlink/5bYBo4sB01sBVWDi) both methods will print out the same. The reason for this is that <strong>arr</strong> is implicitly converted to a pointer. Also the <strong>+ operator</strong> for pointers are overloaded, so we can jump to the next adress by simpy adding 1 to the pointer and the programm will intern lookup the size of the stored objects and add it to the memory adress. For simplicity instead of writing <strong>\*(arr + 1)</strong> you can use the <strong>[]</strong> operator.
 
 Also if you want to use your arrays in a function you will pass them as a pointer. For example we want a function to print the second element, we could do this like:
 ```cpp
