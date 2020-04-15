@@ -90,7 +90,7 @@ void print_second_element(int* arr)
   std::cout << arr[1] << std::endl;
 }
 ```
-Note that we can still use the <strong>[]<strong> operator. Since inside the function the programm does not know the size of function, it cannot warn us about an index [out of the range of that array](https://wandbox.org/permlink/xTgb41UCBMml2IfQ).
+Note that we can still use the <strong>[]</strong> operator. Since inside the function the programm does not know the size of function, it cannot warn us about an index [out of the range of that array](https://wandbox.org/permlink/xTgb41UCBMml2IfQ).
  
 ```cpp
 int arr = {10, 20, 30};
