@@ -101,4 +101,4 @@ In this post I gave a brief introduction on how to create a reference, change th
 - [reference train](https://wandbox.org/permlink/2LQD473YlZ9wOZV6)
 - [swap function](https://wandbox.org/permlink/LXUFfBcvXyj06DNW)
 
-In a next post we will take a closer look at pointers.
+In a [next post](pointer_references_2) we will take a closer look at pointers.
