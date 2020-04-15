@@ -23,5 +23,11 @@ function we undefined behaviour. The <strong>BigObject</strong> from the <strong
 create function ends. But the pointer is still pointing to the memory adress where the <strong>BigObject</strong> lived. So if we are
 goint the dereference the pointer we try to read invalid memory. Thereby anything could stand at this memory adress. Maybe you will still
 find the old <strong>BigObject</strong> but you could also find and integer or an string. But your programm might still think that
-there is a <strong>BigObject</strong>. So we should ask how can we create an object inside a function that will live after the function
-has returned?
+there is a <strong>BigObject</strong>. So we should ask how can we create an object inside a function that will live after the function has returned? You need to use the <strong>new</strong> operator. For example we can create our object on a free memory adress like this:
+```cpp
+new BigObject;
+```
+But how can we access our object now? We have neither a variable assigned to it nor the memory adress. Therefore the <strong>new operator</strong> returns the memory adress and we can store it in a pointer.
+```cpp
+BigObject* ptr = new BigObject;
+```
