@@ -74,3 +74,4 @@ You can find this code [here](https://wandbox.org/permlink/touY93Z6vfo983Ik). So
 In this post you learned something about the representation of strings in C. Since C++ is based on C the strings still resists. In the next post we will take a look at the C++ string class. Even if you don't be using <strong>C strings</strong> you should know how to handle them since many frameworks are still using them. To train your skills on that topic I provided two playgrounds for you:
 - [strlen](https://wandbox.org/permlink/YVjsjtjCuu9KxaBF)
 - [reverse string](https://wandbox.org/permlink/MbRVSdcHWoLPDVLz)
+- [string comparison](https://wandbox.org/permlink/dxj7YI6usWRUKNEn)
