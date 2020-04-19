@@ -9,7 +9,7 @@ needed. This null character is the ASCII character with a value of 0. [ASCII](ht
 char str[] = {'H','e','l','l','o','\0'};
 std::cout << str << std::endl;
 ```
-As you [can see](https://wandbox.org/permlink/7N6jQmMtvSZBvGus) this will print out the string <italic>hello</italic>. However if we add another terminating character in the middle of the string
+As you [can see](https://wandbox.org/permlink/7N6jQmMtvSZBvGus) this will print out the string "hello". However if we add another terminating character in the middle of the string
 ```cpp
 char str[] = {'H','e','l','\0','l','o','\0'};
 std::cout << str << std::endl;
