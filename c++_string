@@ -1,2 +1,68 @@
 # C++ string
-In C++ with the abality to create you own 
+The C++ standard also prvodies a representation of strings. The standard [string class](http://www.cplusplus.com/reference/string/string/)
+is an object that represents sequences of character like the c strings. 
+
+### Introduction
+A simple skelleton of a string class would look like this
+```cpp
+class string
+{
+public:
+  string(const char* str_ptr);
+private:
+  char[] str;
+  int size;
+}
+```
+The idea is that you do not need a terminating character anymore since you can store the length of the string as a member variable.
+You can also see that you can construct a string from a char pointer. 
+```cpp
+std::string str("Hello");
+std::cout << str << std::endl;
+```
+Make sure that you include the header <strong><string></strong> to be able to use the string class. You program should now [print
+out](https://wandbox.org/permlink/NvcciwP3douh7vRt) the string.
+The big difference now between a c string is that the standard string is a own object. Therefore you can also [pass a string as
+value to a function](https://wandbox.org/permlink/PlwjgvSRApA0BLH6).
+```cpp
+void print(std::string str)
+{
+  std::cout << str << std::endl;
+}
+```
+### Typical string operations
+Another benefit of the string class is that there are many member functions to manipulate the string. You can for example get the
+size of a string with
+```cpp
+std::string str("Hello");
+std::cout << str.size() << std::endl;
+```
+This [code snippet](https://wandbox.org/permlink/PlwjgvSRApA0BLH6) will print out the size 5. To access a part of the string you
+can use the member function [substr](http://www.cplusplus.com/reference/string/string/substr/).
+```cpp
+std::string str("Hello");
+std::cout << str.substr(0, 3) << std::endl;
+```
+In [this example](https://wandbox.org/permlink/gEsmuejWgHmBhw65) we get the string "Hel" as the result. Another useful member function
+is [find](http://www.cplusplus.com/reference/string/string/find/) which allows to search for a particular substring and to return
+the startind index.
+```cpp
+std::string str("Hello");
+std::cout << str.find("ll") << std::endl;
+```
+[This](https://wandbox.org/permlink/Vb5XtQEkklFan87q) will result in the index 2. Since strings are now handled as objects the
+comparison operators have been overwritten. Now we can write more expressive code withoud the need of an extra function.
+```cpp
+std::string str("Hello");
+std::string str2("Hi");
+if (str != str2)
+{
+  std::cout << "Not equal" << std::endl;
+}
+```
+You can find an example [here](https://wandbox.org/permlink/dLma4IhUc3RgsYOn).
+
+
+### Memory allocation
+When creating a string object you always need to remember the memory allocation of a string bject. Even if the object itself is created
+on the stack the inner data (the sequence of characters) is created on the heap. To visualize this behaviour I 
