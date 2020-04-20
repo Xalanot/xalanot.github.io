@@ -61,7 +61,7 @@ if (str != str2)
 }
 ```
 You can find an example [here](https://wandbox.org/permlink/dLma4IhUc3RgsYOn). Sometimes you still need to get a <strong>c string</strong>
-out of your <strong>std::string<strong>. You can get a poiner to the null terminated char array with the member function [c_str()](http://www.cplusplus.com/reference/string/string/c_str/).
+out of your <strong>std::string</strong>. You can get a poiner to the null terminated char array with the member function [c_str()](http://www.cplusplus.com/reference/string/string/c_str/).
 For example we could use our old print function in this way
 ```cpp
 void print(const char* str)
