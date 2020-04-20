@@ -1,6 +1,6 @@
 # C++ string
 The C++ standard also prvodies a representation of strings. The standard [string class](http://www.cplusplus.com/reference/string/string/)
-is an object that represents sequences of character like the c strings. 
+is an object that represents sequences of character like the c string. 
 
 ### Introduction
 A simple skelleton of a string class would look like this
