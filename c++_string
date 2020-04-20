@@ -60,9 +60,60 @@ if (str != str2)
   std::cout << "Not equal" << std::endl;
 }
 ```
-You can find an example [here](https://wandbox.org/permlink/dLma4IhUc3RgsYOn).
+You can find an example [here](https://wandbox.org/permlink/dLma4IhUc3RgsYOn). Sometimes you still need to get a <strong>c string</strong>
+out of your <strong>std::string<strong>. You can get a poiner to the null terminated char array with the member function [c_str()](http://www.cplusplus.com/reference/string/string/c_str/).
+For example we could use our old print function in this way
+```cpp
+void print(const char* str)
+{
+  std::cout << str << std::endl;
+}
 
+std::string str("Hello");
+print(str.c_str());
+```
+You can find the code [here](https://wandbox.org/permlink/hTarKIJLFHNMxzCs).
 
 ### Memory allocation
 When creating a string object you always need to remember the memory allocation of a string bject. Even if the object itself is created
-on the stack the inner data (the sequence of characters) is created on the heap. To visualize this behaviour I 
+on the stack the inner data (the sequence of characters) is created on the heap. To visualize this behaviour I overloaded the new operator
+to see when memeroy is allocated on the heap.
+```cpp
+static int allocation_count = 0;
+
+void* operator new(size_t)
+{
+  allocation_count += 1;
+  std::cout << "allocation memory on the heap" << std::endl;
+  return malloc(size);
+}
+```
+This function simply increment the allocation count variable and than allocates memory like the normal <strong>new operator</strong>.
+So lets see what happens if we create a string and pass it to a function.
+```cpp
+void print(std::string str)
+{
+    std::cout << str << std::endl;   
+}
+
+std::string str("This is a very long string");
+print(str);
+```
+If we now run [this code](https://wandbox.org/permlink/bFRKu7oLK6zYJZZ1) we see that we have two allocations on the heap. Make sure
+that your string is long enough otherwise the compiler will optimize the heap allocation for you according to SSO(short string 
+optimization). Because we pass the string as value to the function a new string has to be created. For <strong>C strings</strong>
+this would never happen since we are always using pointers in those cases. To get rid of that extra allocation we can simply pass
+our string as a [reference](reference_pointer_1.md]. 
+```cpp
+void print(std::string const& str)
+{
+    std::cout << str << std::endl;   
+}
+```
+[Now](https://wandbox.org/permlink/QsoeGtCYsIs5dPoE) we only have one allocation.
+
+### Conclusion
+C++ offers a new way to deal with strings. If you can you should always be using the <strong>std::string</strong>, however there will
+come situations where you have to deal with both kinds of strings. Therefore you should be familiar with both. As alway I added some
+playgrounds to get familar with the string class:
+- [filter](https://wandbox.org/permlink/9czuX3KKVUD0qGrA)
